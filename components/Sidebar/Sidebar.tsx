@@ -43,29 +43,29 @@ const AppSidebar = () => {
     <div className='bg-stone-100 font-poppins text-stone-950'>
       <div className='flex flex-col gap-4 px-4 mt-5'>
         {Object.keys(MenuItems).map((item, index) => (
-            <div key={index} className='place-items-center transition-all duration-300'>
-                <div
-                onClick={() => manageMenuClick(item)}
-                className='flex p-3 justify-between place-items-center hover:bg-slate-200 hover:cursor-pointer rounded-lg'
-                >
-                  <div className='flex gap-3'>
-                    <div>{MenuIcons[index]}</div>
-                    <div>{item}</div>
-                  </div>
-                  {subMenus[index] != "" && 
-                    <ChevronRight className={`transition-all duration-300 w-5 h-5 ${subMenuStates[item as keyof typeof subMenuStates] ? "rotate-90" : ""}`} />
-                  }
-                </div>
-                {subMenus[index] != "" && 
-                  <div className={`transition-all duration-300 mt-2 ${subMenuStates[item as keyof typeof subMenuStates] ? "" : "hidden"}`}>
-                    { MenuItems[item as keyof typeof MenuItems].map((item, index) => (
-                      <div key={index} className='text-stone-500 hover:bg-slate-200 hover:cursor-pointer p-1 rounded-md'>
-                        <span className='ml-11 italic'>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                }
+          <div key={index} className='place-items-center transition-all duration-300'>
+            <div
+            onClick={() => manageMenuClick(item)}
+            className='flex p-3 justify-between place-items-center hover:bg-slate-200 hover:cursor-pointer rounded-lg'
+            >
+              <div className='flex gap-3'>
+                <div>{MenuIcons[index]}</div>
+                <div>{item}</div>
+              </div>
+              {subMenus[index] != "" && 
+                <ChevronRight className={`transition-all duration-300 w-5 h-5 ${subMenuStates[item as keyof typeof subMenuStates] ? "rotate-90" : ""}`} />
+              }
             </div>
+            {subMenus[index] != "" && 
+              <div className={`transition-all duration-300 mt-2 ${subMenuStates[item as keyof typeof subMenuStates] ? "" : "hidden"}`}>
+                { MenuItems[item as keyof typeof MenuItems].map((item, index) => (
+                  <div key={index} className='text-stone-500 hover:bg-slate-200 hover:cursor-pointer p-1 rounded-md'>
+                    <span className='ml-11 italic'>{item}</span>
+                  </div>
+                ))}
+              </div>
+            }
+          </div>
         ))}
       </div>
     </div>

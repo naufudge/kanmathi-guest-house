@@ -1,9 +1,15 @@
 import React from 'react'
 
-const Dashboard = () => {
+interface DashboardProps {
+  title: string;
+}
+
+const Dashboard: React.FC<DashboardProps> = ({title}) => {
   return (
-    <div className='bg-white rounded shadow'>
-      
+    <div className='flex w-full bg-white rounded shadow p-8 box-border'>
+      <div>
+        <h1 className='font-roboto font-bold text-[2rem]'>{title}</h1>
+      </div>
     </div>
   )
 }

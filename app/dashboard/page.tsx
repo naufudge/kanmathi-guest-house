@@ -6,12 +6,12 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='w-screen h-screen overflow-x-hidden'>
+    <div className='flex flex-col h-screen max-h-full'>
         <DashNavBar />
         <div className='grid grid-cols-[200px,_1fr] h-full'>
             
             <AppSidebar />
-            <Dashboard />
+            <Dashboard title='Home' />
 
         </div>
     </div>
